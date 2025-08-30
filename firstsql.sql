@@ -1,4 +1,4 @@
-CREATE DATABASE college ;
+CREATE DATABASE college;
 use college;
 
 CREATE TABLE student(
