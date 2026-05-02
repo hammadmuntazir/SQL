@@ -1,0 +1,42 @@
+-- DATEDIFF(date1,date2)
+-- -- Returns:date1-date2
+-- SELECT DATEDIFF('2024-12-31','2024-12-01')AS diff:
+
+-- SELECT
+--       customer_id,
+--       visit_date,
+--       DATEDIFF(CURDATE(),visit_date)AS days_ago
+-- FROM Visits;
+
+-- -- Gap Between Orders
+-- SELECT 
+--        order_id,
+--        order_date,
+--        previous_order_date,
+--        DATEDIFF(order_date,previous_order_date) AS days_between_orders
+-- FROM orders;
+-- -- Age Calculation
+-- SELECT 
+--           name,
+--           birth_date,
+--           DATEDIFF(CURDATE(),birth_date)/365 AS age_in_years
+-- FROM users;
+
+-- -- Find Users who is not active from 30 days
+-- SELECT user_id,last_login
+-- FROM users
+-- WHERE DATEDIFF(CURDATE(),last_login)>30;
+
+-- -- Subscription expiry check
+-- SELECT 
+--           subscription_id,
+--           end_date,
+--           DATEDIFF(end_date,CURDATE()) AS days_remaining
+-- FROM subscriptions
+-- WHERE DATEDIFF(end_date,CURDATE()) BETWEEN 0 AND 7;
+-- -- Average gap between purchases
+-- SELECT
+--         customer_id,
+--         AVG(DATEDIFF(next_purchase_date,purchase-date)) AS avg_days_between
+-- FROM purchases
+-- GROUP BY customer_id;
